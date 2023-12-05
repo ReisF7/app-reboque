@@ -3,8 +3,8 @@ import 'package:reboque_application/app/componentes/button_princ.dart';
 import 'package:reboque_application/app/componentes/custo_textfield.dart';
 import 'package:reboque_application/app/componentes/custom_header.dart';
 
-class AddService extends StatelessWidget {
-  const AddService({super.key});
+class AddExpenses extends StatelessWidget {
+  const AddExpenses({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,16 +15,18 @@ class AddService extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             CustomHeader(
-              title: "Adicionar Serviço",
+              title: "Adicionar Despesa",
               icon: Icons.close,
             ),
+            SizedBox(height: 10),
             CustomTextField(title: "Data"),
-            CustomTextField(title: "Motorista"),
-            CustomTextField(title: "Veículo"),
-            CustomTextField(title: "Saída"),
-            CustomTextField(title: "Destino"),
-            CustomTextField(title: "Valor"),
-            CustomTextField(title: "Despesa da viagem"),
+            SizedBox(height: 10),
+            CustomTextField(title: "Tipo"),
+            SizedBox(height: 10),
+            CustomTextField(title: "Estabelecimento"),
+            SizedBox(height: 10),
+            CustomTextField(title: "Observação", obs: true),
+            SizedBox(height: 100),
             Button_Princ()
           ],
         ),

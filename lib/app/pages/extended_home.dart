@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Extend_Home extends StatelessWidget {
-  const Extend_Home({super.key});
+class ExtendedHome extends StatelessWidget {
+  const ExtendedHome({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -76,7 +76,26 @@ class Extend_Home extends StatelessWidget {
                         ),
                       )
                     ],
-                  )
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [Icon(Icons.money), Text("Despesas")],
+                      ),
+                      Container(
+                        padding: EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                            color: Colors.blue,
+                            borderRadius: BorderRadius.circular(10)),
+                        width: 200,
+                        child: Row(
+                          children: [Icon(Icons.add), Text("Inserir despesas")],
+                        ),
+                      )
+                    ],
+                  ),
                 ]),
           ),
 
@@ -115,6 +134,7 @@ class Extend_Home extends StatelessWidget {
           )
         ]),
       ),
-    );();
+    );
+    ();
   }
 }

@@ -22,12 +22,10 @@ class CardVehicle extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("Nome: ${vehicle["marca"]}",
+              Text("Nome: ${vehicle["marca"]}", style: TextStyle(fontSize: 16)),
+              Text("Modelo: ${vehicle["modelo"]}",
                   style: TextStyle(fontSize: 16)),
-              Text("CPF: ${vehicle["modelo"]}", 
-              style: TextStyle(fontSize: 16)),
-              Text("CNH: ${vehicle["placa"]}", 
-              style: TextStyle(fontSize: 16))
+              Text("Placa: ${vehicle["placa"]}", style: TextStyle(fontSize: 16))
             ],
           )
         ],

@@ -25,6 +25,8 @@ class AddExpenses extends StatelessWidget {
             SizedBox(height: 10),
             CustomTextField(title: "Estabelecimento"),
             SizedBox(height: 10),
+            CustomTextField(title: "Valor"),
+            SizedBox(height: 10),
             CustomTextField(title: "Observação", obs: true),
             SizedBox(height: 100),
             Button_Princ()

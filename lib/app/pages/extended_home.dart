@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:reboque_application/app/routes/my_routes.dart';
 
 class ExtendedHome extends StatelessWidget {
   const ExtendedHome({super.key});
@@ -32,7 +33,13 @@ class ExtendedHome extends StatelessWidget {
                         width: 200,
                         child: Row(
                           children: [
-                            Icon(Icons.add),
+                            InkWell(
+                              onTap: () {
+                                Navigator.pushNamed(
+                                    context, MyRoutes.viewMotorista);
+                              },
+                              child: Icon(Icons.add),
+                            ),
                             Text("Inserir motorista")
                           ],
                         ),

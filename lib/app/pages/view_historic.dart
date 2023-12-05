@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:reboque_application/app/componentes/button_princ.dart';
+import 'package:reboque_application/app/componentes/card_expenses.dart';
 import 'package:reboque_application/app/componentes/card_historic.dart';
 import 'package:reboque_application/app/componentes/custo_textfield.dart';
 import 'package:reboque_application/app/componentes/custom_header.dart';
@@ -27,16 +28,20 @@ class _ViewHistoricState extends State<ViewHistoric> {
       "valor": "00,00"
     },
   ];
-  List expenses = [{
+  List expenses = [
+    {
       "data": "11/11/11",
       "tipo": "aaaaaa",
       "estabelecimeto": "bbbbbb",
+      "valor": "222222"
     },
     {
       "data": "12/12/12",
       "tipo": "aaaaaa",
       "estabelecimento": "bbbbbb",
-    },];
+      "valor": "222222"
+    },
+  ];
   String type = "Serviços";
 
   @override
@@ -67,9 +72,11 @@ class _ViewHistoricState extends State<ViewHistoric> {
             ...List.generate(
                 type == "Serviços" ? services.length : expenses.length,
                 (index) {
-              return CardHistoric(
-                  historic:
-                      type == "Serviços" ? services[index] : expenses[index]);
+              if (type == "Serviços") {
+                return CardHistoric(historic: services[index]);
+              } else {
+                return CardExpenses(historic: expenses[index]);
+              }
             }),
           ],
         ),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class CardHistoric extends StatelessWidget {
+class CardExpenses extends StatelessWidget {
   Map historic;
-  CardHistoric({super.key, required this.historic});
+  CardExpenses({super.key, required this.historic});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class CardHistoric extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text("Data: ${historic["data"]}", style: TextStyle(fontSize: 12)),
-              Text("Saida: ${historic["saida"]}",
+              Text("Tipo: ${historic["tipo"]}",
                   style: TextStyle(fontSize: 12)),
             ],
           ),
@@ -24,9 +24,9 @@ class CardHistoric extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("Valor: ${historic["valor"]}",
+              Text("Estabelecimento: ${historic["estabelecimento"]}",
                   style: TextStyle(fontSize: 12)),
-              Text("Destino: ${historic["destino"]}",
+              Text("Valor: ${historic["valor"]}",
                   style: TextStyle(fontSize: 12))
             ],
           )

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:reboque_application/app/componentes/button_login.dart';
 import 'package:reboque_application/app/componentes/button_princ.dart';
 import 'package:reboque_application/app/componentes/custo_textfield.dart';
 import 'package:reboque_application/app/componentes/custom_header.dart';
 
-class ViewExpense extends StatelessWidget {
-  const ViewExpense({super.key});
+class TelaLogin extends StatelessWidget {
+  const TelaLogin({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,21 +15,11 @@ class ViewExpense extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            CustomHeader(
-              title: "Despesa",
-              icon: Icons.close,
-            ),
             SizedBox(height: 10),
-            CustomTextField(title: "Tipo"),
+            CustomTextField(title: "Login:"),
             SizedBox(height: 10),
-            CustomTextField(title: "Data"),
-            SizedBox(height: 10),
-            CustomTextField(title: "Estabelecimento"),
-            SizedBox(height: 10),
-            CustomTextField(title: "Valor"),
-            SizedBox(height: 10),
-            CustomTextField(title: "Observação", obs: true),
-            SizedBox(height: 100),
+            CustomTextField(title: "Senha:"),
+            Button_Login()
           ],
         ),
       ),

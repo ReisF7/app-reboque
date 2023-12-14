@@ -46,39 +46,43 @@ class _ViewHistoricState extends State<ViewHistoric> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-      child: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            CustomHeader(
-              title: "Historico",
-              icon: Icons.arrow_back,
-            ),
-            CustomDropdown(
-              value: type,
-              onChanged: (String? value) {
-                setState(() {
+    return Scaffold(
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                CustomHeader(
+                  title: "Historico",
+                  icon: Icons.arrow_back,
+                ),
+                CustomDropdown(
+                  value: type,
+                  onChanged: (String? value) {
+                    setState(() {
+                      if (type == "Serviços") {
+                        type = "Despesas";
+                      } else {
+                        type = "Serviços";
+                      }
+                    });
+                  },
+                ),
+                SizedBox(height: 20),
+                ...List.generate(
+                    type == "Serviços" ? services.length : expenses.length,
+                    (index) {
                   if (type == "Serviços") {
-                    type = "Despesas";
+                    return CardHistoric(historic: services[index]);
                   } else {
-                    type = "Serviços";
+                    return CardExpenses(historic: expenses[index]);
                   }
-                });
-              },
+                }),
+              ],
             ),
-            SizedBox(height: 20),
-            ...List.generate(
-                type == "Serviços" ? services.length : expenses.length,
-                (index) {
-              if (type == "Serviços") {
-                return CardHistoric(historic: services[index]);
-              } else {
-                return CardExpenses(historic: expenses[index]);
-              }
-            }),
-          ],
+          ),
         ),
       ),
     );

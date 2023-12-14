@@ -8,25 +8,29 @@ class AddService extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-      child: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            CustomHeader(
-              title: "Adicionar Serviço",
-              icon: Icons.close,
+    return Scaffold(
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                CustomHeader(
+                  title: "Adicionar Serviço",
+                  icon: Icons.close,
+                ),
+                CustomTextField(title: "Data"),
+                CustomTextField(title: "Motorista"),
+                CustomTextField(title: "Veículo"),
+                CustomTextField(title: "Saída"),
+                CustomTextField(title: "Destino"),
+                CustomTextField(title: "Valor"),
+                CustomTextField(title: "Despesa da viagem"),
+                Button_Princ()
+              ],
             ),
-            CustomTextField(title: "Data"),
-            CustomTextField(title: "Motorista"),
-            CustomTextField(title: "Veículo"),
-            CustomTextField(title: "Saída"),
-            CustomTextField(title: "Destino"),
-            CustomTextField(title: "Valor"),
-            CustomTextField(title: "Despesa da viagem"),
-            Button_Princ()
-          ],
+          ),
         ),
       ),
     );

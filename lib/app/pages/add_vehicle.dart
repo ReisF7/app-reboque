@@ -8,21 +8,32 @@ class AddVehicle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          CustomHeader(
-            title: "Adicionar Veículo",
-            icon: Icons.close,
+    return Scaffold(
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                CustomHeader(
+                  title: "Adicionar Veículo",
+                  icon: Icons.close,
+                ),
+                SizedBox(height: 10),
+                CustomTextField(title: "Marca"),
+                SizedBox(height: 10),
+                CustomTextField(title: "Modelo"),
+                SizedBox(height: 10),
+                CustomTextField(title: "Chassi"),
+                SizedBox(height: 10),
+                CustomTextField(title: "Capacidade"),
+                SizedBox(height: 150),
+                Button_Princ()
+              ],
+            ),
           ),
-          CustomTextField(title: "Marca"),
-          CustomTextField(title: "Modelo"),
-          CustomTextField(title: "Chassi"),
-          CustomTextField(title: "Capacidade"),
-          Button_Princ()
-        ],
+        ),
       ),
     );
   }

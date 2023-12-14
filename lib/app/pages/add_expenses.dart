@@ -8,29 +8,33 @@ class AddExpenses extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-      child: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            CustomHeader(
-              title: "Adicionar Despesa",
-              icon: Icons.close,
+    return Scaffold(
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                CustomHeader(
+                  title: "Adicionar Despesa",
+                  icon: Icons.close,
+                ),
+                SizedBox(height: 10),
+                CustomTextField(title: "Data"),
+                SizedBox(height: 10),
+                CustomTextField(title: "Tipo"),
+                SizedBox(height: 10),
+                CustomTextField(title: "Estabelecimento"),
+                SizedBox(height: 10),
+                CustomTextField(title: "Valor"),
+                SizedBox(height: 10),
+                CustomTextField(title: "Observação", obs: true),
+                SizedBox(height: 100),
+                Button_Princ()
+              ],
             ),
-            SizedBox(height: 10),
-            CustomTextField(title: "Data"),
-            SizedBox(height: 10),
-            CustomTextField(title: "Tipo"),
-            SizedBox(height: 10),
-            CustomTextField(title: "Estabelecimento"),
-            SizedBox(height: 10),
-            CustomTextField(title: "Valor"),
-            SizedBox(height: 10),
-            CustomTextField(title: "Observação", obs: true),
-            SizedBox(height: 100),
-            Button_Princ()
-          ],
+          ),
         ),
       ),
     );

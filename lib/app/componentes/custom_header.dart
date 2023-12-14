@@ -3,17 +3,17 @@ import 'package:flutter/material.dart';
 class CustomHeader extends StatelessWidget {
   String title;
   IconData icon;
-   CustomHeader({
-    super.key,
-    required this.title,
-    required this.icon
-  });
+  CustomHeader({super.key, required this.title, required this.icon});
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Icon(icon),
+        InkWell(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: Icon(icon)),
         Spacer(),
         Text(
           title,

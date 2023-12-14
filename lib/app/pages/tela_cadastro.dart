@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:reboque_application/app/componentes/button_cadastrar.dart';
 import 'package:reboque_application/app/componentes/button_princ.dart';
 import 'package:reboque_application/app/componentes/custo_textfield.dart';
 import 'package:reboque_application/app/componentes/custom_header.dart';
 
-class ViewService extends StatelessWidget {
-  const ViewService({super.key});
+class TelaCadastro extends StatelessWidget {
+  const TelaCadastro({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,16 +18,19 @@ class ViewService extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 CustomHeader(
-                  title: "Serviço",
+                  title: "Cadastro",
                   icon: Icons.close,
                 ),
-                CustomTextField(title: "Data"),
-                CustomTextField(title: "Motorista"),
-                CustomTextField(title: "Veículo"),
-                CustomTextField(title: "Saída"),
-                CustomTextField(title: "Destino"),
-                CustomTextField(title: "Valor"),
-                CustomTextField(title: "Despesa da viagem"),
+                SizedBox(height: 10),
+                CustomTextField(title: "Nome Completo"),
+                CustomTextField(title: "CPF"),
+                CustomTextField(title: "Data de Nascimento"),
+                CustomTextField(title: "Email"),
+                CustomTextField(title: "Senha"),
+                CustomTextField(title: "Confirmar Senha"),
+                CustomTextField(title: "Telefone"),
+                SizedBox(height: 30),
+                Button_Cadastrar()
               ],
             ),
           ),

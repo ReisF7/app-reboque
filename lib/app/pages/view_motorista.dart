@@ -21,20 +21,24 @@ class ViewMotorista extends StatelessWidget {
         "cnh": "111111",
       },
     ];
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          CustomHeader(
-            title: "Motoristas",
-            icon: Icons.arrow_back,
+    return Scaffold(
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              CustomHeader(
+                title: "Motoristas",
+                icon: Icons.arrow_back,
+              ),
+              SizedBox(height: 20),
+              ...List.generate(motorista.length, (index) {
+                return CardMotorista(motorista: motorista[index]);
+              }),
+            ],
           ),
-          SizedBox(height: 20),
-          ...List.generate(motorista.length, (index) {
-            return CardMotorista(motorista: motorista[index]);
-          }),
-        ],
+        ),
       ),
     );
   }

@@ -9,18 +9,38 @@ class TelaLogin extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-      child: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            SizedBox(height: 10),
-            CustomTextField(title: "Login:"),
-            SizedBox(height: 10),
-            CustomTextField(title: "Senha:"),
-            Button_Login()
-          ],
+    return Scaffold(
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                SizedBox(height: 10),
+                Icon(Icons.fire_truck_rounded, size: 100, color: Colors.blue),
+                Text("LRebok"),
+                SizedBox(height: 50),
+                CustomTextField(title: "Login:"),
+                SizedBox(height: 10),
+                CustomTextField(title: "Senha:"),
+                Container(
+                    alignment: Alignment.centerRight,
+                    child: Text("Recuperar Senha")),
+                SizedBox(height: 50),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.facebook),
+                    SizedBox(width: 20),
+                    Icon(Icons.g_mobiledata),
+                  ],
+                ),
+                SizedBox(height: 80),
+                Button_Login()
+              ],
+            ),
+          ),
         ),
       ),
     );
